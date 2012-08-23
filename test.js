@@ -5,12 +5,8 @@ var jasmine = require('jasmine-node');
 var reporter = require('jasmine-node/lib/jasmine-node/reporter');
 require('jasmine-reporters');
 
-function isSource(path) {
-	return path.match(/\.js$/) && !path.match(/main\.js$/);
-}
-
-function isSpec(path) {
-	return path.match(/\.spec\.js$/);
+function notViewCode(path) {
+	return !path.match(/main\.js$/);
 }
 
 function load(root) {
@@ -18,7 +14,7 @@ function load(root) {
 		requirejs(root + '/' + path);
 	}
 }
-	
+
 requirejs.config({
 	nodeRequire: global.require,
 	appDir: 'src',
@@ -28,8 +24,8 @@ requirejs.config({
 	paths: {}	
 });
 
-wrench.readdirSyncRecursive('src').filter(isSource).forEach(load('src'));
-wrench.readdirSyncRecursive('specs').filter(isSpec).forEach(load('specs'));
+wrench.readdirSyncRecursive('src').filter(notViewCode).forEach(load('src'));
+wrench.readdirSyncRecursive('specs').forEach(load('specs'));
 
 mkdirp.sync('out/reports');
 
