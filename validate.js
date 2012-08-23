@@ -1,7 +1,6 @@
-var fs = require('fs');
 var wrench = require('wrench');
 var hint = require('jshint/lib/hint');
-var config = require('./jshint.json');
+var config = require('./jshint');
 
 function sourcePath(path) {
 	return 'src/' + path;
