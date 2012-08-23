@@ -16,9 +16,6 @@ function isSpec(path) {
 function load(root) {
 	return function(path) {
 		requirejs(root + '/' + path);
-		if (path.match(/\.spec\.js$/)) {
-			console.log('  [SPEC] ' + path);
-		}
 	}
 }
 	
@@ -45,10 +42,8 @@ jasmine.getEnv().execute();
 //
 
 setTimeout(function() {
-	if (jasmine.getEnv().currentRunner().results().failedCount === 0) {
-        console.log('OK');
-    } else {
+	if (jasmine.getEnv().currentRunner().results().failedCount !== 0) {
         console.log('FAILED');
         process.exit(1);    
 	}		
-}, 500);
+}, 300);
