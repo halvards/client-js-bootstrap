@@ -1,6 +1,10 @@
 
 # Organising client-side javascript
 
+To get setup, you'll need [Node.js](http://nodejs.org/).
+Then clone the project and run `npm install`.
+
+# Then what?
 
 ## Validating
 
