@@ -1,4 +1,4 @@
-define(['./math'], function(math) {
+define(['math'], function(math) {
 	
     function component(value) {
         return math.clamp(value, 0, 255);
