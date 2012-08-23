@@ -1,0 +1,37 @@
+{
+    "predef": [
+		"$",
+        "require",
+        "define",
+        "console"
+    ],
+
+    "node" : false,
+    "es5" : true,
+    "browser" : true,
+
+    "boss" : false,
+    "curly": true,
+    "debug": false,
+    "devel": false,
+    "eqeqeq": true,
+    "evil": true,
+    "forin": false,
+    "immed": true,
+    "laxbreak": false,
+	"latedef": false,
+    "newcap": true,
+    "noarg": true,
+    "noempty": false,
+    "nonew": false,
+    "nomen": false,
+    "onevar": false,
+	"shadow": false,
+    "plusplus": false,
+    "regexp": false,
+    "undef": true,
+    "sub": true,
+    "strict": false,
+    "white": false,
+	"smarttabs": false
+}
