@@ -23,9 +23,7 @@ define(['./math'], function(math) {
     }
 
 	return {
-        create: function(r, g, b) {
-            return create(r, g, b);
-        }
+        create: create
 	};
 	
 });
